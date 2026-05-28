@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Dabby_OG</title>
+
+  <!-- Futuristic kawaii font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     body {
-      background: #f6a9c0;
+      background: linear-gradient(to bottom, #d9c6ff, #c2b0ff);
       color: #1d2150;
       min-height: 100vh;
-      padding: 30px 20px;
+      padding: 40px 20px;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .container {
@@ -27,105 +33,95 @@
     }
 
     .profile-pic {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      border: 4px solid #3c3f7f;
+      border: 4px solid #6f5bff;
       object-fit: cover;
-      margin-bottom: 20px;
+      display: block;
+      margin: 0 auto 25px auto;
+      background: #ffffff33;
     }
 
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 15px;
-      letter-spacing: 2px;
+      margin-bottom: 18px;
+      letter-spacing: 3px;
+      color: #ffffff;
+      text-shadow: 0 0 10px #8f7cff;
     }
 
     .socials {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 22px;
       margin-bottom: 35px;
       font-size: 2rem;
     }
 
     .socials a {
       text-decoration: none;
-      color: #1d2150;
+      color: #ffffff;
       transition: 0.2s;
     }
 
     .socials a:hover {
-      transform: scale(1.1);
+      transform: scale(1.12);
     }
 
     .link-card {
       display: block;
-      background: #454b8d;
+      background: #6f5bff;
       color: white;
       text-decoration: none;
-      padding: 22px;
-      border-radius: 22px;
-      margin-bottom: 20px;
-      font-size: 1.3rem;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      font-size: 1.15rem;
       font-weight: bold;
-      box-shadow: 0 8px 0 #2f3467;
+      border: 2px solid #9f92ff;
+      box-shadow: 0 0 18px #8e7cff55;
       transition: 0.2s;
     }
 
     .link-card:hover {
       transform: translateY(2px);
-      box-shadow: 0 5px 0 #2f3467;
+      background: #7e6cff;
     }
 
     .subtitle {
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: normal;
       opacity: 0.9;
-      margin-top: 5px;
-    }
-
-    .section-title {
-      margin: 45px 0 20px;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .video-grid iframe {
-      width: 100%;
-      aspect-ratio: 9/16;
-      border: none;
-      border-radius: 18px;
+      margin-top: 6px;
     }
 
     @media (max-width: 600px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
         font-size: 2rem;
+      }
+
+      .link-card {
+        font-size: 1rem;
       }
     }
   </style>
 
   <script src="https://kit.fontawesome.com/a2d9d5a64f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="container">
 
+    <!-- PROFILE IMAGE -->
     <img src="profile.jpg" alt="Profile" class="profile-pic" />
 
     <h1>Dabby_OG</h1>
 
+    <!-- SOCIAL ICONS -->
     <div class="socials">
+
       <a href="https://instagram.com/YOURUSERNAME" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
@@ -133,51 +129,29 @@
       <a href="https://tiktok.com/@YOURUSERNAME" target="_blank">
         <i class="fab fa-tiktok"></i>
       </a>
+
     </div>
 
-    <a class="link-card" href="https://twitch.tv/YOURUSERNAME" target="_blank">
+    <!-- LINKS -->
+
+    <a class="link-card" href="https://twitch.tv/dabby_og" target="_blank">
       Twitch
-      <span class="subtitle">Mon, Tues + Thurs</span>
+      <span class="subtitle">Streaming Weekly ✦</span>
     </a>
 
-    <a class="link-card" href="https://youtube.com/@YOURUSERNAME" target="_blank">
+    <a class="link-card" href="https://youtube.com/@dabby_og" target="_blank">
       YouTube
     </a>
 
-    <a class="link-card" href="https://fansly.com/YOURUSERNAME" target="_blank">
-      VIP
+    <!-- Replace vip.html later with your own warning/landing page -->
+    <a class="link-card" href="vip.html">
+      VIP ✦ 18+
     </a>
 
-    <a class="link-card" href="https://facebook.com/YOURUSERNAME" target="_blank">
+    <a class="link-card" href="https://www.facebook.com/share/18t9AzoCmV/" target="_blank">
       Facebook
     </a>
-
-    <div class="section-title">♡ SUBSCRIBE ON YOUTUBE ♡</div>
-
-    <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-    </div>
 
   </div>
 </body>
 </html>
-```
-
-## How To Use It
-
-1. Create a new GitHub repository.
-2. Upload this file as `index.html`.
-3. Upload your profile photo as `profile.jpg`.
-4. Turn on GitHub Pages:
-
-   * Repo Settings → Pages
-   * Source → Deploy from branch
-   * Branch → main
-5. Connect your Porkbun domain:
-
-   * In GitHub Pages settings, add your custom domain.
-   * In Porkbun, point the domain to GitHub Pages DNS records.
-
-Then your Beacons link can be replaced with your own custom domain entirely for free.
-
