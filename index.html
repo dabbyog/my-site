@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Dabby_OG</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +14,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
     }
 
     body {
@@ -22,19 +22,135 @@
       color: #1d2150;
       min-height: 100vh;
       padding: 40px 20px;
-      font-family: 'Orbitron', sans-serif;
+      text-align: center;
     }
 
     .container {
       max-width: 500px;
       margin: auto;
-      text-align: center;
     }
 
     .profile-pic {
-      width: 160px; /* slightly bigger */
-      height: 160px;
+      width: 130px;   /* slightly smaller */
+      height: 130px;
       border-radius: 50%;
+      border: 4px solid #6f5bff;
+      object-fit: cover;
+      margin: 0 auto 20px auto;
+      display: block;
+      box-shadow: 0 0 20px rgba(111, 91, 255, 0.35);
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin-bottom: 5px;
+      color: white;
+      text-shadow: 0 0 10px #8f7cff;
+      letter-spacing: 2px;
+    }
+
+    .sparkles {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      letter-spacing: 6px;
+      opacity: 0.9;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .socials a {
+      color: white;
+      transition: 0.2s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.1);
+    }
+
+    .link-card {
+      display: block;
+      background: #6f5bff;
+      color: white;
+      text-decoration: none;
+      padding: 18px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      text-shadow:
+        -1px -1px 0 #3a2fb0,
+         1px -1px 0 #3a2fb0,
+        -1px  1px 0 #3a2fb0,
+         1px  1px 0 #3a2fb0;
+      transition: 0.2s;
+    }
+
+    .link-card:hover {
+      transform: translateY(2px);
+      background: #7e6cff;
+    }
+
+    .subtitle {
+      display: block;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/a2d9d5a64f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- PROFILE IMAGE (no renaming needed anymore) -->
+    <img src="profile.jpg?v=1" alt="Profile" class="profile-pic" />
+
+    <h1>Dabby_OG</h1>
+
+    <!-- ✦ ✦ ✦ under name -->
+    <div class="sparkles">✦ ✦ ✦</div>
+
+    <div class="socials">
+      <a href="https://instagram.com/YOURUSERNAME" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://tiktok.com/@YOURUSERNAME" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+
+    <a class="link-card" href="https://twitch.tv/dabby_og" target="_blank">
+      Twitch
+      <span class="subtitle">Mon, Tues, + Wed</span>
+    </a>
+
+    <a class="link-card" href="https://youtube.com/@dabby_og" target="_blank">
+      YouTube
+    </a>
+
+    <a class="link-card" href="vip.html">
+      VIP
+    </a>
+
+    <a class="link-card" href="https://www.facebook.com/share/18t9AzoCmV/" target="_blank">
+      Facebook
+    </a>
+
+  </div>
+
+</body>
+</html>      border-radius: 50%;
       border: 4px solid #6f5bff;
       object-fit: cover;
       display: block;
