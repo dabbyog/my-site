@@ -5,115 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dabby_OG</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Audiowide', sans-serif;
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(180deg, #dcc8ff, #b9a7ff);
-      padding: 40px 20px;
-      text-align: center;
+      overflow-x: hidden;
       color: white;
+      text-align: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at top, #f0e6ff, #b9a7ff, #6f5bff);
+      position: relative;
     }
 
+    /* ⭐ STAR BACKGROUND */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .stars span {
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: floatStars 12s linear infinite;
+    }
+
+    @keyframes floatStars {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* layout */
     .container {
+      position: relative;
+      z-index: 2;
       max-width: 520px;
       margin: auto;
     }
 
-    /* PROFILE PIC */
+    /* PROFILE */
     .profile-pic {
       width: 135px;
       height: 135px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #7a66ff;
-      box-shadow: 0 0 25px rgba(122, 102, 255, 0.55);
-      margin-bottom: 12px;
-      background: rgba(255,255,255,0.2);
+      border: 3px solid #d8ccff;
+      box-shadow: 0 0 30px rgba(180, 160, 255, 0.9);
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 2.3rem;
-      text-shadow: 0 0 12px #9b8cff;
+      font-size: 2.2rem;
+      text-shadow: 0 0 12px #ffffff55;
       margin-bottom: 5px;
     }
 
+    .role {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
     .sparkles {
-      letter-spacing: 8px;
-      margin-bottom: 22px;
-      opacity: 0.95;
+      margin-bottom: 25px;
+      letter-spacing: 10px;
+      opacity: 0.9;
     }
 
     /* BUTTONS */
     .btn {
       display: block;
-      background: #6f5bff;
+      background: rgba(111, 91, 255, 0.9);
       color: white;
       text-decoration: none;
-      padding: 18px 20px;
+      padding: 18px;
       border-radius: 14px;
       margin: 14px 0;
       font-weight: bold;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      box-shadow: 0 0 18px rgba(140, 120, 255, 0.6);
       transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
     .btn:hover {
       transform: translateY(2px);
-      background: #7f6dff;
+      box-shadow: 0 0 28px rgba(200, 180, 255, 0.9);
+      background: rgba(130, 110, 255, 1);
     }
 
     .subtitle {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       opacity: 0.9;
       margin-top: 5px;
     }
 
-    .spacer {
-      height: 35px;
+    /* divider */
+    .divider {
+      margin: 15px 0 25px;
+      letter-spacing: 12px;
+      opacity: 0.9;
+      color: #ffffffcc;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- stars -->
+  <div class="stars">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:20%; animation-delay:2s;"></span>
+    <span style="left:35%; animation-delay:4s;"></span>
+    <span style="left:50%; animation-delay:1s;"></span>
+    <span style="left:65%; animation-delay:3s;"></span>
+    <span style="left:80%; animation-delay:5s;"></span>
+    <span style="left:90%; animation-delay:2.5s;"></span>
+  </div>
+
   <div class="container">
 
-    <!-- PROFILE PICTURE (YOUR FILE NAME) -->
     <img src="InShot_20260531_070047679.jpg" class="profile-pic" />
 
     <h1>Dabby_OG</h1>
-    <div class="sparkles">✦ ✦ ✦</div>
+
+    <div class="role">Digital Creator</div>
+
+    <div class="divider">✦ ✦ ✦</div>
 
     <!-- LINKS -->
 
-    <a class="btn" href="https://twitch.tv/dabby_og">
+    <a class="btn" href="https://twitch.tv/dabby_og" target="_blank">
       Twitch
       <span class="subtitle">Mon, Tues, + Thurs</span>
     </a>
 
-    <a class="btn" href="https://youtube.com/@dabby_og">
+    <a class="btn" href="https://youtube.com/@dabby_og" target="_blank">
       YouTube
     </a>
 
-    <a class="btn" href="vip.html">
+    <a class="btn" href="vip.html" target="_blank">
       VIP
     </a>
 
-    <a class="btn" href="https://www.facebook.com/share/18t9AzoCmV/">
+    <a class="btn" href="https://www.facebook.com/share/18t9AzoCmV/" target="_blank">
       Facebook
     </a>
-
-    <div class="spacer"></div>
 
   </div>
 
