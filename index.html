@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dabby_OG</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <!-- Softer futuristic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Audiowide', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     body {
@@ -21,42 +22,40 @@
       color: white;
       text-align: center;
       padding: 40px 20px;
-      background: radial-gradient(circle at top, #f0e6ff, #b9a7ff, #6f5bff);
       position: relative;
+
+      /* deeper space gradient */
+      background:
+        radial-gradient(circle at top, #f2e9ff 0%, #b9a7ff 35%, #6f5bff 100%);
     }
 
+    /* ⭐ STAR LAYER (more subtle + denser) */
     .stars {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
+      inset: 0;
       z-index: 0;
       pointer-events: none;
+      overflow: hidden;
     }
 
     .stars span {
       position: absolute;
-      display: block;
-      width: 3px;
-      height: 3px;
+      width: 2px;
+      height: 2px;
       background: white;
       border-radius: 50%;
-      opacity: 0.7;
-      animation: floatStars 12s linear infinite;
+      opacity: 0.6;
+      animation: drift 18s linear infinite;
     }
 
-    @keyframes floatStars {
+    @keyframes drift {
       0% {
-        transform: translateY(100vh) scale(0.5);
+        transform: translateY(100vh);
         opacity: 0;
       }
-      50% {
-        opacity: 1;
-      }
+      20% { opacity: 0.8; }
       100% {
-        transform: translateY(-10vh) scale(1);
+        transform: translateY(-10vh);
         opacity: 0;
       }
     }
@@ -68,106 +67,130 @@
       margin: auto;
     }
 
+    /* PROFILE */
     .profile-pic {
-      width: 135px;
-      height: 135px;
+      width: 132px;
+      height: 132px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #d8ccff;
+      border: 2px solid rgba(255,255,255,0.6);
       box-shadow:
-        0 0 15px rgba(255,255,255,0.4),
-        0 0 30px rgba(180,160,255,0.8);
+        0 0 18px rgba(255,255,255,0.25),
+        0 0 40px rgba(170,150,255,0.55);
+
+      animation: softPulse 6s ease-in-out infinite;
       margin-bottom: 10px;
+    }
+
+    @keyframes softPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 18px rgba(255,255,255,0.25),
+          0 0 40px rgba(170,150,255,0.45);
+      }
+      50% {
+        box-shadow:
+          0 0 22px rgba(255,255,255,0.35),
+          0 0 55px rgba(190,170,255,0.6);
+      }
     }
 
     h1 {
       font-size: 2.2rem;
-      text-shadow: 0 0 12px rgba(255,255,255,0.5);
-      margin-bottom: 5px;
-    }
-
-    .role {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
       letter-spacing: 1px;
     }
 
-    .divider {
-      margin-bottom: 28px;
-      letter-spacing: 12px;
-      color: rgba(255,255,255,0.9);
+    .role {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 12px;
     }
 
+    /* nicer divider */
+    .divider {
+      margin: 10px 0 26px;
+      letter-spacing: 6px;
+      opacity: 0.65;
+      font-size: 1rem;
+    }
+
+    /* BUTTONS (kept uniform + subtle glow) */
     .btn {
       position: relative;
       overflow: hidden;
+
       display: block;
-      background: rgba(111, 91, 255, 0.9);
-      color: white;
       text-decoration: none;
-      padding: 18px;
+      color: white;
+
+      background: rgba(111, 91, 255, 0.85);
+      padding: 17px;
       border-radius: 14px;
-      margin: 14px 0;
-      font-size: 1.15rem;
-      font-weight: bold;
-      box-shadow: 0 0 18px rgba(140, 120, 255, 0.6);
-      transition: 0.2s;
-      border: 1px solid rgba(255,255,255,0.2);
+      margin: 12px 0;
+
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      border: 1px solid rgba(255,255,255,0.15);
+
+      box-shadow: 0 0 14px rgba(140,120,255,0.25);
+
+      transition: 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(2px);
-      box-shadow: 0 0 28px rgba(200, 180, 255, 0.9);
-      background: rgba(130, 110, 255, 1);
+      transform: translateY(1px);
+      box-shadow: 0 0 18px rgba(190,170,255,0.35);
+      background: rgba(120, 100, 255, 0.95);
     }
 
+    /* tiny subtle sparkle (NOT attention-grabbing) */
     .btn::after {
       content: "✦";
       position: absolute;
-      right: -20px;
+      right: -12px;
       top: 50%;
       transform: translateY(-50%);
       opacity: 0;
-      transition: all 0.35s ease;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      transition: 0.3s ease;
     }
 
     .btn:hover::after {
-      right: 18px;
-      opacity: 1;
+      right: 16px;
+      opacity: 0.6;
     }
 
     .subtitle {
       display: block;
       font-size: 0.8rem;
-      opacity: 0.9;
-      margin-top: 5px;
+      opacity: 0.85;
+      margin-top: 4px;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- stars -->
   <div class="stars">
     <span style="left:10%; animation-delay:0s;"></span>
-    <span style="left:20%; animation-delay:2s;"></span>
-    <span style="left:35%; animation-delay:4s;"></span>
-    <span style="left:50%; animation-delay:1s;"></span>
-    <span style="left:65%; animation-delay:3s;"></span>
-    <span style="left:80%; animation-delay:5s;"></span>
-    <span style="left:90%; animation-delay:2.5s;"></span>
+    <span style="left:25%; animation-delay:3s;"></span>
+    <span style="left:40%; animation-delay:1s;"></span>
+    <span style="left:55%; animation-delay:5s;"></span>
+    <span style="left:70%; animation-delay:2s;"></span>
+    <span style="left:85%; animation-delay:4s;"></span>
   </div>
 
   <div class="container">
 
-    <img src="InShot_20260531_070047679.jpg" class="profile-pic" alt="Dabby_OG" />
+    <img src="InShot_20260531_070047679.jpg" class="profile-pic" />
 
     <h1>Dabby_OG</h1>
-
     <div class="role">Digital Creator</div>
 
-    <div class="divider">✦ ✦ ✦</div>
+    <div class="divider">✦ ✧ ✦</div>
 
     <a class="btn" href="https://twitch.tv/dabby_og" target="_blank">
       Twitch
