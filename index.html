@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dabby_OG</title>
 
-  <!-- clean futuristic font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -22,23 +21,39 @@
       color: white;
       text-align: center;
       padding: 40px 20px;
-      position: relative;
 
-      /* pastel cyber sky */
       background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.35), transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(200,180,255,0.35), transparent 45%),
-        linear-gradient(180deg, #d8ccff 0%, #9f8bff 40%, #4b3fa8 100%);
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.25), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(180,160,255,0.25), transparent 45%),
+        linear-gradient(180deg, #d8ccff 0%, #9f8bff 45%, #4b3fa8 100%);
+
+      opacity: 0;
+      animation: pageLoad 0.6s ease forwards;
     }
 
-    /* 🌫 nebula clouds */
+    @keyframes pageLoad {
+      to { opacity: 1; }
+    }
+
+    .site-frame {
+      position: fixed;
+      inset: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        inset 0 0 40px rgba(120,105,255,0.08),
+        0 0 25px rgba(0,0,0,0.25);
+      pointer-events: none;
+      z-index: 3;
+    }
+
     .nebula {
       position: fixed;
       inset: 0;
+      opacity: 0.5;
+      filter: blur(45px);
       z-index: 0;
       pointer-events: none;
-      opacity: 0.55;
-      filter: blur(40px);
     }
 
     .nebula::before,
@@ -47,23 +62,22 @@
       position: absolute;
       width: 60vw;
       height: 60vw;
-      background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
-      animation: drift 18s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 60%);
+      animation: drift 20s ease-in-out infinite;
     }
 
     .nebula::after {
-      right: -20%;
-      top: 20%;
-      background: radial-gradient(circle, rgba(170,140,255,0.25), transparent 60%);
-      animation-duration: 26s;
+      right: -25%;
+      top: 25%;
+      background: radial-gradient(circle, rgba(170,140,255,0.2), transparent 60%);
+      animation-duration: 28s;
     }
 
     @keyframes drift {
       0%,100% { transform: translateY(0px) translateX(0px); }
-      50% { transform: translateY(40px) translateX(-30px); }
+      50% { transform: translateY(35px) translateX(-25px); }
     }
 
-    /* ⭐ stars (very subtle now) */
     .stars {
       position: fixed;
       inset: 0;
@@ -108,7 +122,6 @@
 
     h1 {
       font-size: 2.2rem;
-      letter-spacing: 1px;
       margin-bottom: 4px;
     }
 
@@ -116,7 +129,6 @@
       font-size: 0.95rem;
       opacity: 0.8;
       margin-bottom: 12px;
-      letter-spacing: 0.5px;
     }
 
     .divider {
@@ -126,7 +138,6 @@
     }
 
     .btn {
-      position: relative;
       display: block;
       text-decoration: none;
       color: white;
@@ -162,15 +173,16 @@
 
 <body>
 
+  <div class="site-frame"></div>
   <div class="nebula"></div>
 
   <div class="stars">
-    <span style="left:10%; animation-delay:0s;"></span>
-    <span style="left:25%; animation-delay:3s;"></span>
-    <span style="left:40%; animation-delay:1s;"></span>
-    <span style="left:55%; animation-delay:5s;"></span>
-    <span style="left:70%; animation-delay:2s;"></span>
-    <span style="left:85%; animation-delay:4s;"></span>
+    <span style="left:10%"></span>
+    <span style="left:25%"></span>
+    <span style="left:40%"></span>
+    <span style="left:55%"></span>
+    <span style="left:70%"></span>
+    <span style="left:85%"></span>
   </div>
 
   <div class="container">
@@ -188,13 +200,9 @@
     </a>
 
     <a class="btn" href="https://youtube.com/@dabby_og" target="_blank">YouTube</a>
-
     <a class="btn" href="https://www.instagram.com/itsdabby_og?igsh=MXIxanZidms1N3BqdQ==" target="_blank">Instagram</a>
-
     <a class="btn" href="https://www.tiktok.com/@dabby_og?_r=1&_t=ZP-96sDDshVRWw" target="_blank">TikTok</a>
-
     <a class="btn" href="vip.html" target="_blank">VIP</a>
-
     <a class="btn" href="https://www.facebook.com/share/18t9AzoCmV/" target="_blank">Facebook</a>
 
   </div>
