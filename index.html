@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dabby_OG</title>
 
-  <!-- Softer futuristic font -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- clean futuristic font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
@@ -24,18 +24,51 @@
       padding: 40px 20px;
       position: relative;
 
-      /* deeper space gradient */
+      /* pastel cyber sky */
       background:
-        radial-gradient(circle at top, #f2e9ff 0%, #b9a7ff 35%, #6f5bff 100%);
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.35), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(200,180,255,0.35), transparent 45%),
+        linear-gradient(180deg, #d8ccff 0%, #9f8bff 40%, #4b3fa8 100%);
     }
 
-    /* ⭐ STAR LAYER (more subtle + denser) */
+    /* 🌫 nebula clouds */
+    .nebula {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.55;
+      filter: blur(40px);
+    }
+
+    .nebula::before,
+    .nebula::after {
+      content: "";
+      position: absolute;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+      animation: drift 18s ease-in-out infinite;
+    }
+
+    .nebula::after {
+      right: -20%;
+      top: 20%;
+      background: radial-gradient(circle, rgba(170,140,255,0.25), transparent 60%);
+      animation-duration: 26s;
+    }
+
+    @keyframes drift {
+      0%,100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(40px) translateX(-30px); }
+    }
+
+    /* ⭐ stars (very subtle now) */
     .stars {
       position: fixed;
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      overflow: hidden;
     }
 
     .stars span {
@@ -44,20 +77,14 @@
       height: 2px;
       background: white;
       border-radius: 50%;
-      opacity: 0.6;
-      animation: drift 18s linear infinite;
+      opacity: 0.4;
+      animation: float 22s linear infinite;
     }
 
-    @keyframes drift {
-      0% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-      20% { opacity: 0.8; }
-      100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      20% { opacity: 0.6; }
+      100% { transform: translateY(-10vh); opacity: 0; }
     }
 
     .container {
@@ -67,104 +94,66 @@
       margin: auto;
     }
 
-    /* PROFILE */
     .profile-pic {
       width: 132px;
       height: 132px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.6);
       box-shadow:
         0 0 18px rgba(255,255,255,0.25),
-        0 0 40px rgba(170,150,255,0.55);
-
-      animation: softPulse 6s ease-in-out infinite;
+        0 0 50px rgba(160,140,255,0.45);
       margin-bottom: 10px;
-    }
-
-    @keyframes softPulse {
-      0%, 100% {
-        box-shadow:
-          0 0 18px rgba(255,255,255,0.25),
-          0 0 40px rgba(170,150,255,0.45);
-      }
-      50% {
-        box-shadow:
-          0 0 22px rgba(255,255,255,0.35),
-          0 0 55px rgba(190,170,255,0.6);
-      }
     }
 
     h1 {
       font-size: 2.2rem;
-      margin-bottom: 4px;
       letter-spacing: 1px;
+      margin-bottom: 4px;
     }
 
     .role {
       font-size: 0.95rem;
-      opacity: 0.85;
+      opacity: 0.8;
       margin-bottom: 12px;
+      letter-spacing: 0.5px;
     }
 
-    /* nicer divider */
     .divider {
       margin: 10px 0 26px;
-      letter-spacing: 6px;
-      opacity: 0.65;
-      font-size: 1rem;
+      opacity: 0.6;
+      letter-spacing: 8px;
     }
 
-    /* BUTTONS (kept uniform + subtle glow) */
     .btn {
       position: relative;
-      overflow: hidden;
-
       display: block;
       text-decoration: none;
       color: white;
 
-      background: rgba(111, 91, 255, 0.85);
-      padding: 17px;
-      border-radius: 14px;
+      background: rgba(120, 105, 255, 0.85);
+      padding: 16px;
+      border-radius: 12px;
       margin: 12px 0;
 
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 500;
 
-      border: 1px solid rgba(255,255,255,0.15);
-
+      border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 0 14px rgba(140,120,255,0.25);
 
-      transition: 0.2s ease;
+      transition: 0.2s;
     }
 
     .btn:hover {
       transform: translateY(1px);
-      box-shadow: 0 0 18px rgba(190,170,255,0.35);
-      background: rgba(120, 100, 255, 0.95);
-    }
-
-    /* tiny subtle sparkle (NOT attention-grabbing) */
-    .btn::after {
-      content: "✦";
-      position: absolute;
-      right: -12px;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0;
-      font-size: 0.8rem;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover::after {
-      right: 16px;
-      opacity: 0.6;
+      box-shadow: 0 0 20px rgba(180,160,255,0.35);
+      background: rgba(135, 120, 255, 0.95);
     }
 
     .subtitle {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       opacity: 0.85;
       margin-top: 4px;
     }
@@ -173,7 +162,8 @@
 
 <body>
 
-  <!-- stars -->
+  <div class="nebula"></div>
+
   <div class="stars">
     <span style="left:10%; animation-delay:0s;"></span>
     <span style="left:25%; animation-delay:3s;"></span>
@@ -197,25 +187,15 @@
       <span class="subtitle">Mon, Tues, + Thurs</span>
     </a>
 
-    <a class="btn" href="https://youtube.com/@dabby_og" target="_blank">
-      YouTube
-    </a>
+    <a class="btn" href="https://youtube.com/@dabby_og" target="_blank">YouTube</a>
 
-    <a class="btn" href="https://www.instagram.com/itsdabby_og?igsh=MXIxanZidms1N3BqdQ==" target="_blank">
-      Instagram
-    </a>
+    <a class="btn" href="https://www.instagram.com/itsdabby_og?igsh=MXIxanZidms1N3BqdQ==" target="_blank">Instagram</a>
 
-    <a class="btn" href="https://www.tiktok.com/@dabby_og?_r=1&_t=ZP-96sDDshVRWw" target="_blank">
-      TikTok
-    </a>
+    <a class="btn" href="https://www.tiktok.com/@dabby_og?_r=1&_t=ZP-96sDDshVRWw" target="_blank">TikTok</a>
 
-    <a class="btn" href="vip.html" target="_blank">
-      VIP
-    </a>
+    <a class="btn" href="vip.html" target="_blank">VIP</a>
 
-    <a class="btn" href="https://www.facebook.com/share/18t9AzoCmV/" target="_blank">
-      Facebook
-    </a>
+    <a class="btn" href="https://www.facebook.com/share/18t9AzoCmV/" target="_blank">Facebook</a>
 
   </div>
 
