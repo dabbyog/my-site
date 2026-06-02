@@ -23,21 +23,39 @@
       text-align: center;
       padding: 30px;
       color: white;
-      position: relative;
 
       background:
         radial-gradient(circle at 20% 10%, rgba(255,255,255,0.25), transparent 40%),
         radial-gradient(circle at 80% 30%, rgba(180,160,255,0.25), transparent 45%),
         linear-gradient(180deg, #d8ccff 0%, #9f8bff 45%, #4b3fa8 100%);
+
+      opacity: 0;
+      animation: pageLoad 0.6s ease forwards;
     }
 
-    /* soft nebula layer */
+    @keyframes pageLoad {
+      to { opacity: 1; }
+    }
+
+    .site-frame {
+      position: fixed;
+      inset: 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        inset 0 0 40px rgba(120,105,255,0.08),
+        0 0 25px rgba(0,0,0,0.25);
+      pointer-events: none;
+      z-index: 3;
+    }
+
     .nebula {
       position: fixed;
       inset: 0;
-      pointer-events: none;
       opacity: 0.5;
       filter: blur(45px);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .nebula::before,
@@ -65,29 +83,25 @@
     .card {
       position: relative;
       z-index: 2;
-      width: 100%;
       max-width: 420px;
+      width: 100%;
 
       background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 16px;
-
-      padding: 30px 22px;
-
+      padding: 28px 22px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(0,0,0,0.25);
     }
 
     h1 {
-      font-size: 1.9rem;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 0.95rem;
       opacity: 0.85;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       line-height: 1.4;
     }
 
@@ -117,15 +131,16 @@
     }
 
     .small {
-      margin-top: 12px;
       font-size: 0.75rem;
       opacity: 0.6;
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body>
 
+  <div class="site-frame"></div>
   <div class="nebula"></div>
 
   <div class="card">
@@ -133,23 +148,15 @@
     <h1>VIP Access</h1>
 
     <p>
-      Exclusive content and updates are available below.
+      Exclusive content and behind-the-scenes peeks you won't find anywhere else, tap the links below.
     </p>
 
-    <a class="btn" href="https://fansly.com/nek0_wave" target="_blank">
-      Enter VIP Content
-    </a>
-
-    <a class="btn" href="https://t.me/nek0s_channel" target="_blank">
-      Telegram Channel
-    </a>
-
-    <a class="btn" href="index.html">
-      Back to Home
-    </a>
+    <a class="btn" href="https://fansly.com/nek0_wave" target="_blank">Enter VIP Content</a>
+    <a class="btn" href="https://t.me/nek0s_channel" target="_blank">Telegram Channel</a>
+    <a class="btn" href="index.html">Back to Home</a>
 
     <div class="small">
-      18+ content may be included depending on platform guidelines.
+      18+ users only.
     </div>
 
   </div>
