@@ -1,74 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Member Area</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     body {
       min-height: 100vh;
-      body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-      text-align: center;
-      padding: 30px;
+      padding: 30px 20px;
       color: white;
+      overflow-x: hidden;
 
       background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.25), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(180,160,255,0.25), transparent 45%),
-        linear-gradient(180deg, #d8ccff 0%, #9f8bff 45%, #4b3fa8 100%);
-
-      opacity: 0;
-      animation: pageLoad 0.6s ease forwards;
+        radial-gradient(
+          circle at 20% 10%,
+          rgba(255, 255, 255, 0.22),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(190, 165, 255, 0.3),
+          transparent 35%
+        ),
+        linear-gradient(
+          180deg,
+          #d8ccff 0%,
+          #a995ff 38%,
+          #7765db 72%,
+          #5142aa 100%
+        );
     }
 
-    @keyframes pageLoad {
-      to { opacity: 1; }
+    .page-wrapper {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+      max-width: 440px;
+      min-height: calc(100vh - 60px);
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
     }
 
-    .nebula {
-      position: fixed;
-      inset: 0;
-      opacity: 0.5;
-      filter: blur(45px);
-      z-index: 0;
-      pointer-events: none;
+    .contest-link {
+      display: block;
+      width: 100%;
+      max-width: 390px;
+      text-decoration: none;
     }
 
-    .nebula::before,
-    .nebula::after {
-      content: "";
-      position: absolute;
-      width: 60vw;
-      height: 60vw;
-      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 60%);
-      animation: drift 20s ease-in-out infinite;
+    .contest-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(46, 34, 110, 0.24);
     }
 
-    .nebula::after {
-      right: -25%;
-      top: 25%;
-      background: radial-gradient(circle, rgba(170,140,255,0.2), transparent 60%);
-      animation-duration: 28s;
+    .card {
+      width: 100%;
+      max-width: 360px;
+      padding: 28px 22px;
+
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 24px;
+
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      box-shadow: 0 18px 45px rgba(61, 45, 145, 0.22);
+      text-align: center;
     }
 
-    @keyframes drift {
-      0%,100% { transform: translateY(0px) translateX(0px); }
-      50% { transform: translateY(35px) translateX(-25px); }
+    .divider {
+      margin-bottom: 22px;
+      font-size: 1.35rem;
+      letter-spacing: 8px;
+    }
+
+    .divider.bottom {
+      margin-top: 22px;
+      margin-bottom: 0;
+      opacity: 0.75;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+
+      border-radius: 16px;
+      background: rgba(121, 103, 255, 0.9);
+
+      color: white;
+      text-decoration: none;
+      text-align: left;
+      font-size: 1.08rem;
+      font-weight: 400;
+
+      box-shadow: 0 10px 24px rgba(83, 65, 190, 0.23);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      transform: translateY(-1px);
+      background: rgba(135, 120, 255, 0.96);
     }
 
     .stars {
@@ -76,153 +138,132 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
+      opacity: 0.65;
     }
 
     .stars span {
       position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
-      opacity: 0;
-      animation: float 18s linear infinite;
+      background: white;
     }
 
-    .stars span:nth-child(1)  { left: 6%;  animation-delay: 0s;   animation-duration: 14s; }
-    .stars span:nth-child(2)  { left: 14%; animation-delay: 3s;   animation-duration: 18s; }
-    .stars span:nth-child(3)  { left: 22%; animation-delay: 1s;   animation-duration: 16s; }
-    .stars span:nth-child(4)  { left: 30%; animation-delay: 5s;   animation-duration: 22s; }
-    .stars span:nth-child(5)  { left: 38%; animation-delay: 2s;   animation-duration: 19s; }
-    .stars span:nth-child(6)  { left: 46%; animation-delay: 6s;   animation-duration: 15s; }
-    .stars span:nth-child(7)  { left: 54%; animation-delay: 1.5s; animation-duration: 21s; }
-    .stars span:nth-child(8)  { left: 62%; animation-delay: 4s;   animation-duration: 17s; }
-    .stars span:nth-child(9)  { left: 70%; animation-delay: 2.5s; animation-duration: 20s; }
-    .stars span:nth-child(10) { left: 78%; animation-delay: 0.5s; animation-duration: 16s; }
-    .stars span:nth-child(11) { left: 86%; animation-delay: 3.5s; animation-duration: 23s; }
-    .stars span:nth-child(12) { left: 92%; animation-delay: 1s;   animation-duration: 18s; }
-
-    @keyframes float {
-      0% { transform: translateY(110vh); opacity: 0; }
-      10% { opacity: 0.6; }
-      100% { transform: translateY(-10vh); opacity: 0; }
+    .stars span:nth-child(1) {
+      top: 15%;
+      left: 8%;
     }
 
-    .city {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 140px;
-      z-index: 1;
-      pointer-events: none;
-
-      background:
-        linear-gradient(to top, rgba(0,0,0,0.35), transparent 70%),
-        repeating-linear-gradient(
-          90deg,
-          rgba(255,255,255,0.05) 0px,
-          rgba(255,255,255,0.05) 2px,
-          transparent 2px,
-          transparent 8px
-        );
-
-      opacity: 0.35;
-      animation: cityGlow 6s ease-in-out infinite;
+    .stars span:nth-child(2) {
+      top: 41%;
+      right: 10%;
     }
 
-    @keyframes cityGlow {
-      0%, 100% { opacity: 0.25; }
-      50% { opacity: 0.4; }
+    .stars span:nth-child(3) {
+      top: 66%;
+      left: 15%;
     }
 
-    .card {
-      position: relative;
-      z-index: 2;
-      max-width: 420px;
-      width: 100%;
-
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 16px;
-      padding: 28px 22px;
-      backdrop-filter: blur(10px);
+    .stars span:nth-child(4) {
+      top: 78%;
+      right: 18%;
     }
 
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+    .stars span:nth-child(5) {
+      top: 87%;
+      left: 48%;
     }
 
-    p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-bottom: 18px;
-      line-height: 1.4;
-    }
+    @media (max-width: 480px) {
+      body {
+        padding: 24px 16px;
+      }
 
-    .btn {
-      display: block;
-      text-decoration: none;
-      color: white;
-      background: rgba(120, 105, 255, 0.85);
-      padding: 16px;
-      border-radius: 12px;
-      margin: 12px 0;
-      font-size: 1.05rem;
-      font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 0 14px rgba(140,120,255,0.25);
-      transition: 0.2s;
-    }
+      .page-wrapper {
+        justify-content: flex-start;
+        min-height: auto;
+      }
 
-    .btn:hover {
-      transform: translateY(1px);
-      background: rgba(135, 120, 255, 0.95);
-      box-shadow: 0 0 20px rgba(180,160,255,0.35);
-    }
+      .contest-link {
+        max-width: 360px;
+      }
 
-    .small {
-      font-size: 0.75rem;
-      opacity: 0.6;
-      margin-top: 10px;
+      .card {
+        max-width: 360px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="nebula"></div>
-
-  <div class="stars">
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span>
+  <div class="stars" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
-  <div class="city"></div>
+  <main class="page-wrapper">
 
-<body>
+    <a
+      class="contest-link"
+      href="https://www.manyvids.com/Video/6871097/playing-a-level-from-super-mario-64"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="contest-image"
+        src="InShot_20260715_042340403.jpg"
+        alt="ManyVids Gaming Video of the Month finalist"
+      >
+    </a>
 
-<a href="https://www.manyvids.com/Video/6871097/playing-a-level-from-super-mario-64?utm_medium=sharedLink" target="_blank" rel="noopener noreferrer">
-    <img src="InShot_20260715_042340403.jpg" alt="ManyVids Finalist" style="display:block;max-width:100%;height:auto;margin:20px auto;">
-</a>
-  
-  <div class="card">
+    <section class="card">
 
-    <div class="divider">✦ ✧ ✦</div>
-
-    <p></p>
-
-    <a class="btn" href="https://fansly.com/nek0_wave" target="_blank">Continue</a>
-    <a class="btn" href="https://t.me/nek0s_channel" target="_blank">Telegram Channel</a>
-    <a class="btn" href="https://www.instagram.com/nek0_wave/" target="_blank">Instagram</a>
-    <a class="btn" href="index.html" target="_blank">Back to Home</a>
-
-    <div class="small">
       <div class="divider">✦ ✧ ✦</div>
-    </div>
 
-  </div>
+      <div class="buttons">
+
+        <a
+          class="btn"
+          href="https://fansly.com/nek0_wave"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Continue
+        </a>
+
+        <a
+          class="btn"
+          href="https://t.me/nek0s_channel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Telegram Channel
+        </a>
+
+        <a
+          class="btn"
+          href="https://www.instagram.com/nek0_wave/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a class="btn" href="/">
+          Back to Home
+        </a>
+
+      </div>
+
+      <div class="divider bottom">✦ ✧ ✦</div>
+
+    </section>
+
+  </main>
 
 </body>
 </html>
