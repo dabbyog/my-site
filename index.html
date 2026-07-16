@@ -32,7 +32,9 @@
     }
 
     @keyframes pageLoad {
-      to { opacity: 1; }
+      to {
+        opacity: 1;
+      }
     }
 
     /* NEBULA */
@@ -63,11 +65,16 @@
     }
 
     @keyframes drift {
-      0%,100% { transform: translateY(0px) translateX(0px); }
-      50% { transform: translateY(35px) translateX(-25px); }
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+
+      50% {
+        transform: translateY(35px) translateX(-25px);
+      }
     }
 
-    /* STARS FIXED (TRUE RANDOM FEEL) */
+    /* STARS */
     .stars {
       position: fixed;
       inset: 0;
@@ -103,9 +110,11 @@
         transform: translateY(110vh);
         opacity: 0;
       }
+
       10% {
         opacity: 0.6;
       }
+
       100% {
         transform: translateY(-10vh);
         opacity: 0;
@@ -126,7 +135,7 @@
         linear-gradient(to top, rgba(0,0,0,0.35), transparent 70%),
         repeating-linear-gradient(
           90deg,
-          rgba(255,255,255,0.05) 0px,
+          rgba(255,255,255,0.05) 0,
           rgba(255,255,255,0.05) 2px,
           transparent 2px,
           transparent 8px
@@ -137,14 +146,20 @@
     }
 
     @keyframes cityGlow {
-      0%, 100% { opacity: 0.25; }
-      50% { opacity: 0.4; }
+      0%, 100% {
+        opacity: 0.25;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
     }
 
     /* CONTENT */
     .container {
       position: relative;
       z-index: 2;
+      width: 100%;
       max-width: 520px;
       margin: auto;
     }
@@ -173,28 +188,39 @@
     }
 
     .divider {
-      margin: 10px 0 26px;
+      margin: 10px 0 24px;
       opacity: 0.6;
       letter-spacing: 8px;
     }
 
     .btn {
-      display: block;
+      width: 100%;
+      min-height: 58px;
+      margin: 10px 0;
+      padding: 10px 16px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
       text-decoration: none;
       color: white;
-
       background: rgba(120, 105, 255, 0.85);
-      padding: 16px;
+
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 12px;
-      margin: 12px 0;
+
+      box-shadow: 0 0 14px rgba(140,120,255,0.25);
 
       font-size: 1.05rem;
       font-weight: 500;
+      line-height: 1.2;
 
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 0 14px rgba(140,120,255,0.25);
-
-      transition: 0.2s;
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
     }
 
     .btn:hover {
@@ -205,9 +231,10 @@
 
     .subtitle {
       display: block;
-      font-size: 0.78rem;
+      margin-top: 3px;
+      font-size: 0.76rem;
+      line-height: 1.1;
       opacity: 0.85;
-      margin-top: 4px;
     }
   </style>
 </head>
@@ -226,22 +253,60 @@
 
   <div class="container">
 
-    <img src="InShot_20260531_070047679.jpg" class="profile-pic" />
+    <img
+      src="InShot_20260531_070047679.jpg"
+      class="profile-pic"
+      alt="Dabby OG profile picture"
+    />
 
     <h1>Dabby_OG</h1>
     <div class="role">Digital Creator</div>
 
     <div class="divider">✦ ✧ ✦</div>
 
-    <a class="btn" href="https://twitch.tv/dabby_og" target="_blank">
+    <a
+      class="btn"
+      href="https://twitch.tv/dabby_og"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       Twitch
       <span class="subtitle">Mon, Tues, + Thurs</span>
     </a>
 
-    <a class="btn" href="https://youtube.com/@dabby_og" target="_blank">YouTube</a>
-    <a class="btn" href="https://www.instagram.com/itsdabby_og?igsh=MXIxanZidms1N3BqdQ==" target="_blank">Instagram</a>
-    <a class="btn" href="https://www.tiktok.com/@dabby_og?_r=1&_t=ZP-96sDDshVRWw" target="_blank">TikTok</a>
-    <a class="btn" href="vip.html" target="_blank">⭐Looking for More?👀</a>
+    <a
+      class="btn"
+      href="https://youtube.com/@dabby_og"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      YouTube
+    </a>
+
+    <a
+      class="btn"
+      href="https://www.instagram.com/itsdabby_og?igsh=MXIxanZidms1N3BqdQ=="
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Instagram
+    </a>
+
+    <a
+      class="btn"
+      href="https://www.tiktok.com/@dabby_og?_r=1&_t=ZP-96sDDshVRWw"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      TikTok
+    </a>
+
+    <a
+      class="btn"
+      href="vip.html"
+    >
+      ⭐ Looking for More? 👀
+    </a>
 
   </div>
 
