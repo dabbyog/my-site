@@ -1,13 +1,14 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
 
   <title>More Content</title>
 
@@ -80,50 +81,111 @@
       inset: 0;
       z-index: 1;
       pointer-events: none;
+      overflow: hidden;
     }
 
     .stars span {
       position: absolute;
-      width: 3px;
-      height: 3px;
+      bottom: -10px;
+      width: 2px;
+      height: 2px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.8);
+      background: white;
       box-shadow: 0 0 7px rgba(255, 255, 255, 0.65);
+      opacity: 0;
+      animation: floatStar 18s linear infinite;
     }
 
     .stars span:nth-child(1) {
-      top: 14%;
-      left: 11%;
+      left: 7%;
+      animation-delay: 0s;
+      animation-duration: 15s;
     }
 
     .stars span:nth-child(2) {
-      top: 25%;
-      right: 12%;
+      left: 19%;
+      animation-delay: 4s;
+      animation-duration: 20s;
     }
 
     .stars span:nth-child(3) {
-      top: 40%;
-      left: 8%;
+      left: 34%;
+      animation-delay: 1s;
+      animation-duration: 17s;
     }
 
     .stars span:nth-child(4) {
-      top: 54%;
-      right: 9%;
+      left: 49%;
+      animation-delay: 6s;
+      animation-duration: 22s;
     }
 
     .stars span:nth-child(5) {
-      top: 68%;
-      left: 15%;
+      left: 64%;
+      animation-delay: 2s;
+      animation-duration: 18s;
     }
 
     .stars span:nth-child(6) {
-      top: 78%;
-      right: 18%;
+      left: 79%;
+      animation-delay: 5s;
+      animation-duration: 16s;
     }
 
     .stars span:nth-child(7) {
-      top: 88%;
+      left: 92%;
+      animation-delay: 3s;
+      animation-duration: 21s;
+    }
+
+    .stars span:nth-child(8) {
+      left: 13%;
+      animation-delay: 8s;
+      animation-duration: 19s;
+    }
+
+    .stars span:nth-child(9) {
       left: 42%;
+      animation-delay: 10s;
+      animation-duration: 16s;
+    }
+
+    .stars span:nth-child(10) {
+      left: 72%;
+      animation-delay: 7s;
+      animation-duration: 23s;
+    }
+
+    .stars span:nth-child(11) {
+      left: 86%;
+      animation-delay: 11s;
+      animation-duration: 18s;
+    }
+
+    .stars span:nth-child(12) {
+      left: 27%;
+      animation-delay: 13s;
+      animation-duration: 21s;
+    }
+
+    @keyframes floatStar {
+      0% {
+        transform: translateY(10vh);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.7;
+      }
+
+      90% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateY(-115vh);
+        opacity: 0;
+      }
     }
 
     .city {
@@ -260,6 +322,7 @@
       opacity: 0.78;
     }
   </style>
+
 </head>
 
 <body>
@@ -274,73 +337,79 @@
     <span></span>
     <span></span>
     <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
   <div class="city" aria-hidden="true"></div>
 
   <main class="page">
 
-    <a
-      class="contest-link"
-      href="https://www.manyvids.com/Video/6871097/playing-a-level-from-super-mario-64"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        class="contest-image"
-        src="InShot_20260715_042340403.jpg"
-        alt="ManyVids Gaming Video of the Month finalist. Tap to help me win."
-      >
-    </a>
+```
+<a
+  class="contest-link"
+  href="https://www.manyvids.com/Video/6871097/playing-a-level-from-super-mario-64"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    class="contest-image"
+    src="InShot_20260715_042340403.jpg"
+    alt="ManyVids Gaming Video of the Month finalist. Tap to help me win."
+  >
+</a>
 
-    <div class="sparkles" aria-hidden="true">
-      ✦ ✧ ✦
-    </div>
+<div class="sparkles" aria-hidden="true">
+  ✦ ✧ ✦
+</div>
 
-    <div class="links">
+<div class="links">
 
-      <a
-        class="btn"
-        href="https://fansly.com/nek0_wave"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Continue
-      </a>
+  <a
+    class="btn"
+    href="https://fansly.com/nek0_wave"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Continue
+  </a>
 
-      <a
-        class="btn"
-        href="https://t.me/nek0s_channel"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Telegram Channel
-      </a>
+  <a
+    class="btn"
+    href="https://t.me/nek0s_channel"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Telegram Channel
+  </a>
 
-      <a
-        class="btn"
-        href="https://www.instagram.com/nek0_wave/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram
-      </a>
+  <a
+    class="btn"
+    href="https://www.instagram.com/nek0_wave/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Instagram
+  </a>
 
-      <a
-        class="btn"
-        href="/"
-      >
-        Back to Home
-      </a>
+  <a
+    class="btn"
+    href="/"
+  >
+    Back to Home
+  </a>
 
-    </div>
+</div>
 
-    <div class="bottom-sparkles" aria-hidden="true">
-      ✦ ✧ ✦
-    </div>
+<div class="bottom-sparkles" aria-hidden="true">
+  ✦ ✧ ✦
+</div>
+```
 
   </main>
 
 </body>
 </html>
-```
