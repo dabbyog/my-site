@@ -37,48 +37,41 @@
 
       background:
         radial-gradient(
-          circle at 18% 12%,
-          rgba(255, 255, 255, 0.24),
-          transparent 28%
+          circle at 20% 10%,
+          rgba(255, 255, 255, 0.22),
+          transparent 30%
         ),
         radial-gradient(
-          circle at 80% 24%,
-          rgba(191, 171, 255, 0.32),
+          circle at 80% 30%,
+          rgba(180, 160, 255, 0.28),
           transparent 34%
-        ),
-        radial-gradient(
-          circle at 50% 58%,
-          rgba(119, 95, 231, 0.22),
-          transparent 42%
         ),
         linear-gradient(
           180deg,
-          #d9ceff 0%,
-          #b3a1ff 32%,
-          #8170e8 67%,
-          #5043ad 100%
+          #d8ccff 0%,
+          #aa98ff 38%,
+          #7867dd 72%,
+          #5042aa 100%
         );
     }
 
     .nebula {
       position: fixed;
       inset: 0;
-      z-index: 0;
       pointer-events: none;
+      z-index: 0;
 
       background:
         radial-gradient(
-          circle at 25% 25%,
+          circle at 30% 20%,
           rgba(255, 255, 255, 0.12),
-          transparent 28%
+          transparent 25%
         ),
         radial-gradient(
-          circle at 78% 38%,
-          rgba(222, 210, 255, 0.16),
+          circle at 75% 45%,
+          rgba(235, 225, 255, 0.13),
           transparent 30%
         );
-
-      filter: blur(8px);
     }
 
     .stars {
@@ -94,47 +87,42 @@
       height: 3px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 0 7px rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 7px rgba(255, 255, 255, 0.65);
     }
 
     .stars span:nth-child(1) {
-      top: 13%;
-      left: 10%;
+      top: 14%;
+      left: 11%;
     }
 
     .stars span:nth-child(2) {
-      top: 23%;
+      top: 25%;
       right: 12%;
     }
 
     .stars span:nth-child(3) {
-      top: 39%;
-      left: 18%;
+      top: 40%;
+      left: 8%;
     }
 
     .stars span:nth-child(4) {
-      top: 48%;
-      right: 8%;
+      top: 54%;
+      right: 9%;
     }
 
     .stars span:nth-child(5) {
-      top: 62%;
-      left: 7%;
+      top: 68%;
+      left: 15%;
     }
 
     .stars span:nth-child(6) {
-      top: 70%;
-      right: 17%;
+      top: 78%;
+      right: 18%;
     }
 
     .stars span:nth-child(7) {
-      top: 81%;
-      left: 30%;
-    }
-
-    .stars span:nth-child(8) {
-      top: 89%;
-      right: 31%;
+      top: 88%;
+      left: 42%;
     }
 
     .city {
@@ -142,7 +130,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 220px;
+      height: 230px;
       z-index: 1;
       pointer-events: none;
       opacity: 0.22;
@@ -158,16 +146,16 @@
         linear-gradient(
           180deg,
           transparent 0%,
-          rgba(46, 32, 127, 0.2) 100%
+          rgba(47, 33, 128, 0.2) 100%
         );
 
-      mask-image: linear-gradient(
+      -webkit-mask-image: linear-gradient(
         to bottom,
         transparent,
         black 30%
       );
 
-      -webkit-mask-image: linear-gradient(
+      mask-image: linear-gradient(
         to bottom,
         transparent,
         black 30%
@@ -181,7 +169,7 @@
       width: 100%;
       max-width: 760px;
       margin: 0 auto;
-      padding: 34px 20px 90px;
+      padding: 22px 18px 38px;
 
       display: flex;
       flex-direction: column;
@@ -190,9 +178,9 @@
 
     .contest-link {
       display: block;
-      width: 100%;
-      max-width: 520px;
-      margin-bottom: 36px;
+      width: 92%;
+      max-width: 390px;
+      margin-bottom: 16px;
       text-decoration: none;
     }
 
@@ -200,26 +188,26 @@
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 22px;
+      border-radius: 16px;
 
       box-shadow:
-        0 16px 40px rgba(64, 45, 155, 0.25),
-        0 0 24px rgba(255, 169, 220, 0.18);
+        0 12px 28px rgba(62, 45, 150, 0.24),
+        0 0 18px rgba(255, 174, 221, 0.18);
     }
 
     .sparkles {
-      margin-bottom: 28px;
-      font-size: 1.65rem;
-      letter-spacing: 14px;
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+      letter-spacing: 10px;
       text-align: center;
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
     }
 
     .links {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 13px;
     }
 
     .btn {
@@ -228,28 +216,28 @@
       justify-content: center;
 
       width: 100%;
-      min-height: 100px;
-      padding: 22px 28px;
+      min-height: 68px;
+      padding: 13px 20px;
 
       border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 23px;
+      border-radius: 18px;
 
       background:
         linear-gradient(
           135deg,
-          rgba(127, 106, 255, 0.96),
-          rgba(118, 98, 245, 0.93)
+          rgba(126, 106, 255, 0.96),
+          rgba(117, 98, 244, 0.94)
         );
 
       color: white;
       text-decoration: none;
       text-align: center;
-      font-size: clamp(1.35rem, 4.8vw, 1.8rem);
+      font-size: 1.15rem;
       font-weight: 500;
 
       box-shadow:
-        0 12px 28px rgba(76, 55, 180, 0.24),
-        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+        0 10px 22px rgba(76, 55, 180, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 
       transition:
         transform 0.18s ease,
@@ -258,38 +246,30 @@
 
     .btn:hover,
     .btn:focus-visible {
-      transform: translateY(-2px);
-      filter: brightness(1.06);
+      transform: translateY(-1px);
+      filter: brightness(1.05);
       outline: none;
     }
 
     .bottom-sparkles {
-      margin-top: 32px;
-      font-size: 1.2rem;
-      letter-spacing: 10px;
+      margin-top: 16px;
+      font-size: 1rem;
+      letter-spacing: 8px;
       opacity: 0.78;
     }
 
-    @media (max-width: 600px) {
+    @media (min-width: 700px) {
       .page {
-        padding: 26px 18px 80px;
+        max-width: 640px;
       }
 
       .contest-link {
-        margin-bottom: 30px;
-      }
-
-      .contest-image {
-        border-radius: 16px;
-      }
-
-      .links {
-        gap: 18px;
+        max-width: 400px;
       }
 
       .btn {
-        min-height: 96px;
-        border-radius: 21px;
+        min-height: 72px;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -297,10 +277,9 @@
 
 <body>
 
-  <div class="nebula"></div>
+  <div class="nebula" aria-hidden="true"></div>
 
   <div class="stars" aria-hidden="true">
-    <span></span>
     <span></span>
     <span></span>
     <span></span>
