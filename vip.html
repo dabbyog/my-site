@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Member Area</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>More Content</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     * {
@@ -18,52 +26,173 @@
       font-family: "Inter", sans-serif;
     }
 
+    html {
+      min-height: 100%;
+    }
+
     body {
       min-height: 100vh;
-      padding: 30px 20px;
       color: white;
       overflow-x: hidden;
 
       background:
         radial-gradient(
-          circle at 20% 10%,
-          rgba(255, 255, 255, 0.22),
-          transparent 32%
+          circle at 18% 12%,
+          rgba(255, 255, 255, 0.24),
+          transparent 28%
         ),
         radial-gradient(
-          circle at 80% 30%,
-          rgba(190, 165, 255, 0.3),
-          transparent 35%
+          circle at 80% 24%,
+          rgba(191, 171, 255, 0.32),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 50% 58%,
+          rgba(119, 95, 231, 0.22),
+          transparent 42%
         ),
         linear-gradient(
           180deg,
-          #d8ccff 0%,
-          #a995ff 38%,
-          #7765db 72%,
-          #5142aa 100%
+          #d9ceff 0%,
+          #b3a1ff 32%,
+          #8170e8 67%,
+          #5043ad 100%
         );
     }
 
-    .page-wrapper {
+    .nebula {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 25% 25%,
+          rgba(255, 255, 255, 0.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 78% 38%,
+          rgba(222, 210, 255, 0.16),
+          transparent 30%
+        );
+
+      filter: blur(8px);
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 7px rgba(255, 255, 255, 0.7);
+    }
+
+    .stars span:nth-child(1) {
+      top: 13%;
+      left: 10%;
+    }
+
+    .stars span:nth-child(2) {
+      top: 23%;
+      right: 12%;
+    }
+
+    .stars span:nth-child(3) {
+      top: 39%;
+      left: 18%;
+    }
+
+    .stars span:nth-child(4) {
+      top: 48%;
+      right: 8%;
+    }
+
+    .stars span:nth-child(5) {
+      top: 62%;
+      left: 7%;
+    }
+
+    .stars span:nth-child(6) {
+      top: 70%;
+      right: 17%;
+    }
+
+    .stars span:nth-child(7) {
+      top: 81%;
+      left: 30%;
+    }
+
+    .stars span:nth-child(8) {
+      top: 89%;
+      right: 31%;
+    }
+
+    .city {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 220px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.22;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 10px,
+          rgba(255, 255, 255, 0.16) 11px,
+          transparent 13px
+        ),
+        linear-gradient(
+          180deg,
+          transparent 0%,
+          rgba(46, 32, 127, 0.2) 100%
+        );
+
+      mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 30%
+      );
+
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 30%
+      );
+    }
+
+    .page {
       position: relative;
-      z-index: 2;
+      z-index: 3;
 
       width: 100%;
-      max-width: 440px;
-      min-height: calc(100vh - 60px);
+      max-width: 760px;
       margin: 0 auto;
+      padding: 34px 20px 90px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 22px;
     }
 
     .contest-link {
       display: block;
       width: 100%;
-      max-width: 390px;
+      max-width: 520px;
+      margin-bottom: 36px;
       text-decoration: none;
     }
 
@@ -71,125 +200,96 @@
       display: block;
       width: 100%;
       height: auto;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(46, 34, 110, 0.24);
+      border-radius: 22px;
+
+      box-shadow:
+        0 16px 40px rgba(64, 45, 155, 0.25),
+        0 0 24px rgba(255, 169, 220, 0.18);
     }
 
-    .card {
-      width: 100%;
-      max-width: 360px;
-      padding: 28px 22px;
-
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 24px;
-
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-
-      box-shadow: 0 18px 45px rgba(61, 45, 145, 0.22);
+    .sparkles {
+      margin-bottom: 28px;
+      font-size: 1.65rem;
+      letter-spacing: 14px;
       text-align: center;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
     }
 
-    .divider {
-      margin-bottom: 22px;
-      font-size: 1.35rem;
-      letter-spacing: 8px;
-    }
-
-    .divider.bottom {
-      margin-top: 22px;
-      margin-bottom: 0;
-      opacity: 0.75;
-    }
-
-    .buttons {
+    .links {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 22px;
     }
 
     .btn {
-      display: block;
-      width: 100%;
-      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      border-radius: 16px;
-      background: rgba(121, 103, 255, 0.9);
+      width: 100%;
+      min-height: 100px;
+      padding: 22px 28px;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 23px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(127, 106, 255, 0.96),
+          rgba(118, 98, 245, 0.93)
+        );
 
       color: white;
       text-decoration: none;
-      text-align: left;
-      font-size: 1.08rem;
-      font-weight: 400;
+      text-align: center;
+      font-size: clamp(1.35rem, 4.8vw, 1.8rem);
+      font-weight: 500;
 
-      box-shadow: 0 10px 24px rgba(83, 65, 190, 0.23);
-      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow:
+        0 12px 28px rgba(76, 55, 180, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+
+      transition:
+        transform 0.18s ease,
+        filter 0.18s ease;
     }
 
     .btn:hover,
-    .btn:focus {
-      transform: translateY(-1px);
-      background: rgba(135, 120, 255, 0.96);
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      outline: none;
     }
 
-    .stars {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.65;
+    .bottom-sparkles {
+      margin-top: 32px;
+      font-size: 1.2rem;
+      letter-spacing: 10px;
+      opacity: 0.78;
     }
 
-    .stars span {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: white;
-    }
-
-    .stars span:nth-child(1) {
-      top: 15%;
-      left: 8%;
-    }
-
-    .stars span:nth-child(2) {
-      top: 41%;
-      right: 10%;
-    }
-
-    .stars span:nth-child(3) {
-      top: 66%;
-      left: 15%;
-    }
-
-    .stars span:nth-child(4) {
-      top: 78%;
-      right: 18%;
-    }
-
-    .stars span:nth-child(5) {
-      top: 87%;
-      left: 48%;
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 24px 16px;
-      }
-
-      .page-wrapper {
-        justify-content: flex-start;
-        min-height: auto;
+    @media (max-width: 600px) {
+      .page {
+        padding: 26px 18px 80px;
       }
 
       .contest-link {
-        max-width: 360px;
+        margin-bottom: 30px;
       }
 
-      .card {
-        max-width: 360px;
+      .contest-image {
+        border-radius: 16px;
+      }
+
+      .links {
+        gap: 18px;
+      }
+
+      .btn {
+        min-height: 96px;
+        border-radius: 21px;
       }
     }
   </style>
@@ -197,7 +297,12 @@
 
 <body>
 
+  <div class="nebula"></div>
+
   <div class="stars" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
     <span></span>
     <span></span>
     <span></span>
@@ -205,7 +310,9 @@
     <span></span>
   </div>
 
-  <main class="page-wrapper">
+  <div class="city" aria-hidden="true"></div>
+
+  <main class="page">
 
     <a
       class="contest-link"
@@ -216,52 +323,55 @@
       <img
         class="contest-image"
         src="InShot_20260715_042340403.jpg"
-        alt="ManyVids Gaming Video of the Month finalist"
+        alt="ManyVids Gaming Video of the Month finalist. Tap to help me win."
       >
     </a>
 
-    <section class="card">
+    <div class="sparkles" aria-hidden="true">
+      ✦ ✧ ✦
+    </div>
 
-      <div class="divider">✦ ✧ ✦</div>
+    <div class="links">
 
-      <div class="buttons">
+      <a
+        class="btn"
+        href="https://fansly.com/nek0_wave"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Continue
+      </a>
 
-        <a
-          class="btn"
-          href="https://fansly.com/nek0_wave"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Continue
-        </a>
+      <a
+        class="btn"
+        href="https://t.me/nek0s_channel"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram Channel
+      </a>
 
-        <a
-          class="btn"
-          href="https://t.me/nek0s_channel"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Telegram Channel
-        </a>
+      <a
+        class="btn"
+        href="https://www.instagram.com/nek0_wave/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
 
-        <a
-          class="btn"
-          href="https://www.instagram.com/nek0_wave/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Instagram
-        </a>
+      <a
+        class="btn"
+        href="/"
+      >
+        Back to Home
+      </a>
 
-        <a class="btn" href="/">
-          Back to Home
-        </a>
+    </div>
 
-      </div>
-
-      <div class="divider bottom">✦ ✧ ✦</div>
-
-    </section>
+    <div class="bottom-sparkles" aria-hidden="true">
+      ✦ ✧ ✦
+    </div>
 
   </main>
 
