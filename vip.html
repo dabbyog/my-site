@@ -1,24 +1,14 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>More Content</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -36,25 +26,10 @@ content="width=device-width, initial-scale=1.0"
       min-height: 100vh;
       color: white;
       overflow-x: hidden;
-
       background:
-        radial-gradient(
-          circle at 20% 10%,
-          rgba(255, 255, 255, 0.22),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 80% 30%,
-          rgba(180, 160, 255, 0.28),
-          transparent 34%
-        ),
-        linear-gradient(
-          180deg,
-          #d8ccff 0%,
-          #aa98ff 38%,
-          #7867dd 72%,
-          #5042aa 100%
-        );
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(180, 160, 255, 0.28), transparent 34%),
+        linear-gradient(180deg, #d8ccff 0%, #aa98ff 38%, #7867dd 72%, #5042aa 100%);
     }
 
     .nebula {
@@ -62,18 +37,9 @@ content="width=device-width, initial-scale=1.0"
       inset: 0;
       pointer-events: none;
       z-index: 0;
-
       background:
-        radial-gradient(
-          circle at 30% 20%,
-          rgba(255, 255, 255, 0.12),
-          transparent 25%
-        ),
-        radial-gradient(
-          circle at 75% 45%,
-          rgba(235, 225, 255, 0.13),
-          transparent 30%
-        );
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 75% 45%, rgba(235, 225, 255, 0.13), transparent 30%);
     }
 
     .stars {
@@ -96,92 +62,26 @@ content="width=device-width, initial-scale=1.0"
       animation: floatStar 18s linear infinite;
     }
 
-    .stars span:nth-child(1) {
-      left: 7%;
-      animation-delay: 0s;
-      animation-duration: 15s;
-    }
-
-    .stars span:nth-child(2) {
-      left: 19%;
-      animation-delay: 4s;
-      animation-duration: 20s;
-    }
-
-    .stars span:nth-child(3) {
-      left: 34%;
-      animation-delay: 1s;
-      animation-duration: 17s;
-    }
-
-    .stars span:nth-child(4) {
-      left: 49%;
-      animation-delay: 6s;
-      animation-duration: 22s;
-    }
-
-    .stars span:nth-child(5) {
-      left: 64%;
-      animation-delay: 2s;
-      animation-duration: 18s;
-    }
-
-    .stars span:nth-child(6) {
-      left: 79%;
-      animation-delay: 5s;
-      animation-duration: 16s;
-    }
-
-    .stars span:nth-child(7) {
-      left: 92%;
-      animation-delay: 3s;
-      animation-duration: 21s;
-    }
-
-    .stars span:nth-child(8) {
-      left: 13%;
-      animation-delay: 8s;
-      animation-duration: 19s;
-    }
-
-    .stars span:nth-child(9) {
-      left: 42%;
-      animation-delay: 10s;
-      animation-duration: 16s;
-    }
-
-    .stars span:nth-child(10) {
-      left: 72%;
-      animation-delay: 7s;
-      animation-duration: 23s;
-    }
-
-    .stars span:nth-child(11) {
-      left: 86%;
-      animation-delay: 11s;
-      animation-duration: 18s;
-    }
-
-    .stars span:nth-child(12) {
-      left: 27%;
-      animation-delay: 13s;
-      animation-duration: 21s;
-    }
+    .stars span:nth-child(1) { left: 7%; animation-delay: 0s; animation-duration: 15s; }
+    .stars span:nth-child(2) { left: 19%; animation-delay: 4s; animation-duration: 20s; }
+    .stars span:nth-child(3) { left: 34%; animation-delay: 1s; animation-duration: 17s; }
+    .stars span:nth-child(4) { left: 49%; animation-delay: 6s; animation-duration: 22s; }
+    .stars span:nth-child(5) { left: 64%; animation-delay: 2s; animation-duration: 18s; }
+    .stars span:nth-child(6) { left: 79%; animation-delay: 5s; animation-duration: 16s; }
+    .stars span:nth-child(7) { left: 92%; animation-delay: 3s; animation-duration: 21s; }
+    .stars span:nth-child(8) { left: 13%; animation-delay: 8s; animation-duration: 19s; }
+    .stars span:nth-child(9) { left: 42%; animation-delay: 10s; animation-duration: 16s; }
+    .stars span:nth-child(10) { left: 72%; animation-delay: 7s; animation-duration: 23s; }
+    .stars span:nth-child(11) { left: 86%; animation-delay: 11s; animation-duration: 18s; }
+    .stars span:nth-child(12) { left: 27%; animation-delay: 13s; animation-duration: 21s; }
 
     @keyframes floatStar {
       0% {
         transform: translateY(10vh);
         opacity: 0;
       }
-
-      10% {
-        opacity: 0.7;
-      }
-
-      90% {
-        opacity: 0.7;
-      }
-
+      10% { opacity: 0.7; }
+      90% { opacity: 0.7; }
       100% {
         transform: translateY(-115vh);
         opacity: 0;
@@ -197,48 +97,41 @@ content="width=device-width, initial-scale=1.0"
       z-index: 1;
       pointer-events: none;
       opacity: 0.22;
-
       background:
-        repeating-linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 10px,
-          rgba(255, 255, 255, 0.16) 11px,
-          transparent 13px
-        ),
-        linear-gradient(
-          180deg,
-          transparent 0%,
-          rgba(47, 33, 128, 0.2) 100%
-        );
-
-      -webkit-mask-image: linear-gradient(
-        to bottom,
-        transparent,
-        black 30%
-      );
-
-      mask-image: linear-gradient(
-        to bottom,
-        transparent,
-        black 30%
-      );
+        repeating-linear-gradient(90deg, transparent 0, transparent 10px, rgba(255, 255, 255, 0.16) 11px, transparent 13px),
+        linear-gradient(180deg, transparent 0%, rgba(47, 33, 128, 0.2) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
+      mask-image: linear-gradient(to bottom, transparent, black 30%);
     }
 
     .page {
       position: relative;
       z-index: 3;
-
       width: 100%;
       max-width: 520px;
-      min-height: 100vh;
       margin: 0 auto;
       padding: 22px 18px 32px;
-
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+    }
+
+    .contest-link {
+      display: block;
+      width: 92%;
+      max-width: 390px;
+      margin-bottom: 14px;
+      text-decoration: none;
+    }
+
+    .contest-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow:
+        0 12px 28px rgba(62, 45, 150, 0.24),
+        0 0 18px rgba(255, 174, 221, 0.18);
     }
 
     .sparkles {
@@ -260,35 +153,22 @@ content="width=device-width, initial-scale=1.0"
       display: flex;
       align-items: center;
       justify-content: center;
-
       width: 100%;
       min-height: 58px;
       padding: 10px 16px;
-
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 12px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(126, 106, 255, 0.96),
-          rgba(117, 98, 244, 0.94)
-        );
-
+      background: linear-gradient(135deg, rgba(126, 106, 255, 0.96), rgba(117, 98, 244, 0.94));
       color: white;
       text-decoration: none;
       text-align: center;
       font-size: 1.05rem;
       font-weight: 500;
       line-height: 1.2;
-
       box-shadow:
         0 8px 18px rgba(76, 55, 180, 0.22),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
-      transition:
-        transform 0.18s ease,
-        filter 0.18s ease;
+      transition: transform 0.18s ease, filter 0.18s ease;
     }
 
     .btn:hover,
@@ -305,79 +185,85 @@ content="width=device-width, initial-scale=1.0"
       opacity: 0.78;
     }
   </style>
-
 </head>
 
 <body>
-
   <div class="nebula" aria-hidden="true"></div>
 
   <div class="stars" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
   </div>
 
   <div class="city" aria-hidden="true"></div>
 
   <main class="page">
+    <a
+      class="contest-link"
+      href="https://www.manyvids.com/Video/6871097/playing-a-level-from-super-mario-64"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        class="contest-image"
+        src="InShot_20260715_042340403.jpg"
+        alt="ManyVids Gaming Video of the Month finalist. Tap to help me win."
+      >
+    </a>
 
-<div class="sparkles" aria-hidden="true">
-  ✦ ✧ ✦
-</div>
+    <div class="sparkles" aria-hidden="true">
+      ✦ ✧ ✦
+    </div>
 
-<div class="links">
+    <div class="links">
+      <a
+        class="btn"
+        href="https://fansly.com/nek0_wave"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Continue
+      </a>
 
-  <a
-    class="btn"
-    href="https://fansly.com/nek0_wave"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Continue🔒
-  </a>
+      <a
+        class="btn"
+        href="https://t.me/nek0s_channel"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram Channel
+      </a>
 
-  <a
-    class="btn"
-    href="https://t.me/nek0s_channel"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Telegram Channel
-  </a>
+      <a
+        class="btn"
+        href="https://www.manyvids.com/Activity/nek0wave/1008511608/club"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ManyVids
+      </a>
 
-  <a
-    class="btn"
-    href="https://www.instagram.com/nek0_wave/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Instagram
-  </a>
+      <a
+        class="btn"
+        href="https://www.instagram.com/nek0_wave/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
 
-  <a
-    class="btn"
-    href="/"
-  >
-    Back to Home
-  </a>
+      <a
+        class="btn"
+        href="/"
+      >
+        Back to Home
+      </a>
+    </div>
 
-</div>
-
-<div class="bottom-sparkles" aria-hidden="true">
-  ✦ ✧ ✦
-</div>
-
+    <div class="bottom-sparkles" aria-hidden="true">
+      ✦ ✧ ✦
+    </div>
   </main>
-
 </body>
 </html>
