@@ -109,7 +109,7 @@
       width: 100%;
       max-width: 520px;
       margin: 0 auto;
-      padding: 12px 18px 32px;
+      padding: 4px 18px 32px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -121,27 +121,42 @@
       width: 112px;
       height: 112px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border: 0.75px solid rgba(255, 255, 255, 0.9);
       margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.95), transparent 3%),
-        radial-gradient(circle at 70% 35%, rgba(255,255,255,0.9), transparent 2%),
-        radial-gradient(circle at 40% 70%, rgba(255,255,255,0.85), transparent 2%),
-        radial-gradient(circle at 65% 75%, #e5d7ff 0%, transparent 25%),
-        radial-gradient(circle at 30% 30%, #d9c5ff 0%, #a18aff 40%, #6550ca 75%, #40318e 100%);
-      box-shadow: inset 0 0 18px rgba(255,255,255,0.25);
       position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(235, 215, 255, 0.85), transparent 48%),
+        radial-gradient(circle at 25% 28%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 75% 22%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 68% 68%, #fff0ff 0 1px, transparent 2px),
+        radial-gradient(circle at 30% 72%, #ffffff 0 1px, transparent 2px),
+        radial-gradient(circle at 50% 35%, #d9c4ff, #a48aff 45%, #7460d2 75%, #40318e 100%);
+      box-shadow: inset 0 0 14px rgba(255,255,255,0.2);
+    }
+
+    .profile::before {
+      content: "☾";
+      position: absolute;
+      top: 16px;
+      left: 35px;
+      font-size: 37px;
+      color: #fff5ff;
+      transform: rotate(-20deg);
+      text-shadow: 0 0 8px rgba(255,255,255,0.65);
     }
 
     .profile::after {
-      content: "✦  ✧  ✦";
-      color: white;
-      font-size: 17px;
-      letter-spacing: 3px;
-      text-shadow: 0 0 8px rgba(255,255,255,0.9);
+      content: "⋆ ｡°✩";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 20px;
+      text-align: center;
+      font-size: 15px;
+      letter-spacing: 2px;
+      color: #fff5ff;
+      text-shadow: 0 0 6px rgba(255,255,255,0.8);
     }
 
     .username {
@@ -153,7 +168,7 @@
 
     .sparkles {
       margin-bottom: 12px;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       letter-spacing: 16px;
       text-align: center;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
@@ -198,7 +213,7 @@
 
     .bottom-sparkles {
       margin-top: 14px;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       letter-spacing: 16px;
       padding-left: 16px;
       opacity: 0.78;
@@ -221,7 +236,7 @@
     <div
       class="profile"
       role="img"
-      aria-label="Temporary sparkly purple galaxy profile placeholder"
+      aria-label="Kawaii purple galaxy profile placeholder"
     ></div>
 
     <div class="username">@nek0_wave</div>
