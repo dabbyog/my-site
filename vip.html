@@ -121,10 +121,27 @@
       width: 112px;
       height: 112px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.9);
       margin-bottom: 12px;
-      background: radial-gradient(circle at 35% 30%, #f5eaff, #b9a4ff 45%, #7561d5 75%, #5140a4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,0.95), transparent 3%),
+        radial-gradient(circle at 70% 35%, rgba(255,255,255,0.9), transparent 2%),
+        radial-gradient(circle at 40% 70%, rgba(255,255,255,0.85), transparent 2%),
+        radial-gradient(circle at 65% 75%, #e5d7ff 0%, transparent 25%),
+        radial-gradient(circle at 30% 30%, #d9c5ff 0%, #a18aff 40%, #6550ca 75%, #40318e 100%);
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.25);
+      position: relative;
+    }
+
+    .profile::after {
+      content: "✦  ✧  ✦";
+      color: white;
+      font-size: 17px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 8px rgba(255,255,255,0.9);
     }
 
     .username {
@@ -181,8 +198,9 @@
 
     .bottom-sparkles {
       margin-top: 14px;
-      font-size: 1rem;
-      letter-spacing: 8px;
+      font-size: 1.1rem;
+      letter-spacing: 16px;
+      padding-left: 16px;
       opacity: 0.78;
     }
   </style>
@@ -203,7 +221,7 @@
     <div
       class="profile"
       role="img"
-      aria-label="Temporary purple celestial profile placeholder"
+      aria-label="Temporary sparkly purple galaxy profile placeholder"
     ></div>
 
     <div class="username">@nek0_wave</div>
