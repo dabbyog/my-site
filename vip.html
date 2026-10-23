@@ -1,240 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIP Links</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>More Content</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
-  color: #fff;
-  background:
-    radial-gradient(ellipse at 20% 20%, rgba(155, 85, 255, 0.38), transparent 40%),
-    radial-gradient(ellipse at 80% 35%, rgba(75, 35, 160, 0.48), transparent 42%),
-    radial-gradient(ellipse at 50% 85%, rgba(35, 15, 95, 0.75), transparent 48%),
-    linear-gradient(180deg, #100822 0%, #1a0d35 48%, #090516 100%);
-  overflow-x: hidden;
-  position: relative;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(2px 2px at 15% 18%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 75% 12%, #fff, transparent),
-    radial-gradient(2px 2px at 42% 35%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 88% 55%, #fff, transparent),
-    radial-gradient(2px 2px at 24% 70%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 63% 80%, #fff, transparent),
-    radial-gradient(2px 2px at 9% 90%, #fff, transparent),
-    radial-gradient(1.5px 1.5px at 94% 30%, #fff, transparent);
-  background-size: 250px 250px;
-  animation: twinkle 5s ease-in-out infinite alternate;
-  opacity: 0.8;
-  z-index: 0;
-}
+    html {
+      min-height: 100%;
+    }
 
-@keyframes twinkle {
-  from { opacity: 0.45; }
-  to { opacity: 0.95; }
-}
+    body {
+      min-height: 100vh;
+      color: white;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(180, 160, 255, 0.28), transparent 34%),
+        linear-gradient(180deg, #d8ccff 0%, #aa98ff 38%, #7867dd 72%, #5042aa 100%);
+    }
 
-.page {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  min-height: 100vh;
-  padding: 38px 18px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+    .nebula {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 25%),
+        radial-gradient(circle at 75% 45%, rgba(235, 225, 255, 0.13), transparent 30%);
+    }
 
-.profile {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  position: relative;
-  margin-bottom: 16px;
-  border: 0.75px solid rgba(255, 255, 255, 0.85);
-  background:
-    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.9), transparent 8%),
-    radial-gradient(circle at 65% 70%, rgba(255,190,255,0.9), transparent 12%),
-    radial-gradient(circle at 50% 45%, #d8b5ff 0%, #9e68e8 28%, #5632a0 62%, #20103e 100%);
-  box-shadow:
-    0 0 15px rgba(210, 160, 255, 0.65),
-    0 0 35px rgba(153, 89, 255, 0.35),
-    inset 0 0 18px rgba(255, 255, 255, 0.18);
-}
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-.profile::before {
-  content: "☾";
-  position: absolute;
-  top: 18px;
-  left: 41px;
-  font-size: 45px;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-  transform: rotate(-18deg);
-}
+    .stars span {
+      position: absolute;
+      bottom: -10px;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 0 7px rgba(255, 255, 255, 0.65);
+      opacity: 0;
+      animation: floatStar 18s linear infinite;
+    }
 
-.profile::after {
-  content: "✧ ｡˚";
-  position: absolute;
-  bottom: 22px;
-  left: 0;
-  right: 0;
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.95);
-  letter-spacing: 3px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-}
+    .stars span:nth-child(1) { left: 7%; animation-delay: 0s; animation-duration: 15s; }
+    .stars span:nth-child(2) { left: 19%; animation-delay: 4s; animation-duration: 20s; }
+    .stars span:nth-child(3) { left: 34%; animation-delay: 1s; animation-duration: 17s; }
+    .stars span:nth-child(4) { left: 49%; animation-delay: 6s; animation-duration: 22s; }
+    .stars span:nth-child(5) { left: 64%; animation-delay: 2s; animation-duration: 18s; }
+    .stars span:nth-child(6) { left: 79%; animation-delay: 5s; animation-duration: 16s; }
+    .stars span:nth-child(7) { left: 92%; animation-delay: 3s; animation-duration: 21s; }
+    .stars span:nth-child(8) { left: 13%; animation-delay: 8s; animation-duration: 19s; }
+    .stars span:nth-child(9) { left: 42%; animation-delay: 10s; animation-duration: 16s; }
+    .stars span:nth-child(10) { left: 72%; animation-delay: 7s; animation-duration: 23s; }
+    .stars span:nth-child(11) { left: 86%; animation-delay: 11s; animation-duration: 18s; }
+    .stars span:nth-child(12) { left: 27%; animation-delay: 13s; animation-duration: 21s; }
 
-.username {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 15px;
-  text-shadow: 0 0 14px rgba(220, 180, 255, 0.7);
-}
+    @keyframes floatStar {
+      0% {
+        transform: translateY(10vh);
+        opacity: 0;
+      }
+      10% { opacity: 0.7; }
+      90% { opacity: 0.7; }
+      100% {
+        transform: translateY(-115vh);
+        opacity: 0;
+      }
+    }
 
-.sparkles {
-  font-size: 0.95rem;
-  letter-spacing: 10px;
-  padding-left: 10px;
-  opacity: 0.78;
-}
+    .city {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 230px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.22;
+      background:
+        repeating-linear-gradient(90deg, transparent 0, transparent 10px, rgba(255, 255, 255, 0.16) 11px, transparent 13px),
+        linear-gradient(180deg, transparent 0%, rgba(47, 33, 128, 0.2) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
+      mask-image: linear-gradient(to bottom, transparent, black 30%);
+    }
 
-.top-sparkles {
-  margin-bottom: 19px;
-}
+    .page {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 38px 18px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
 
-.links {
-  width: 100%;
-  max-width: 390px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+    .profile {
+      width: 128px;
+      height: 128px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 0.75px solid rgba(255, 255, 255, 0.9);
+      margin-bottom: 8px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 25%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 72% 18%, #fffaff 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 80% 62%, white 0 1px, transparent 2px),
+        radial-gradient(circle at 28% 70%, #fff5ff 0 1px, transparent 2px),
+        radial-gradient(circle at 55% 83%, white 0 1px, transparent 2px),
+        radial-gradient(ellipse at 35% 65%, rgba(239, 209, 255, 0.9), transparent 42%),
+        radial-gradient(ellipse at 75% 35%, rgba(194, 159, 255, 0.9), transparent 45%),
+        radial-gradient(circle at 50% 45%, #d9c4ff 0%, #a48aff 42%, #7460d2 72%, #40318e 100%);
+      box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.2);
+    }
 
-.link {
-  display: block;
-  width: 100%;
-  padding: 15px 18px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.98rem;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  background: linear-gradient(135deg, rgba(206, 167, 255, 0.22), rgba(115, 70, 190, 0.24));
-  border: 1px solid rgba(235, 215, 255, 0.38);
-  box-shadow:
-    0 0 16px rgba(169, 112, 255, 0.13),
-    inset 0 0 12px rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
+    .profile::before {
+      content: "☾";
+      position: absolute;
+      top: 18px;
+      left: 41px;
+      font-size: 45px;
+      color: #fff8ff;
+      transform: rotate(-20deg);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.75);
+    }
 
-.link:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, rgba(220, 190, 255, 0.32), rgba(140, 90, 220, 0.36));
-  box-shadow: 0 0 22px rgba(190, 140, 255, 0.28);
-}
+    .profile::after {
+      content: "⋆ ｡°✩";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 22px;
+      text-align: center;
+      font-size: 17px;
+      letter-spacing: 2px;
+      color: #fff5ff;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    }
 
-.bottom-sparkles {
-  margin-top: 14px;
-}
+    .username {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
 
-.city {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 85px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  background:
-    linear-gradient(to top, rgba(9, 5, 22, 0.98), transparent),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 12px,
-      rgba(165, 115, 255, 0.12) 12px 14px,
-      transparent 14px 24px
-    );
-}
+    .sparkles {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      letter-spacing: 10px;
+      text-align: center;
+      padding-left: 10px;
+      opacity: 0.78;
+    }
 
-.city::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background:
-    linear-gradient(to top, rgba(12, 6, 27, 0.95), transparent),
-    repeating-linear-gradient(
-      90deg,
-      #160b2c 0 20px,
-      transparent 20px 27px,
-      #1e1039 27px 46px,
-      transparent 46px 54px
-    );
-  clip-path: polygon(
-    0 40%, 4% 40%, 4% 18%, 9% 18%, 9% 55%, 13% 55%,
-    13% 30%, 18% 30%, 18% 5%, 23% 5%, 23% 45%, 28% 45%,
-    28% 25%, 33% 25%, 33% 60%, 38% 60%, 38% 15%, 43% 15%,
-    43% 42%, 48% 42%, 48% 28%, 53% 28%, 53% 52%, 58% 52%,
-    58% 12%, 63% 12%, 63% 43%, 68% 43%, 68% 23%, 73% 23%,
-    73% 55%, 78% 55%, 78% 10%, 83% 10%, 83% 40%, 88% 40%,
-    88% 22%, 93% 22%, 93% 48%, 100% 48%, 100% 100%, 0 100%
-  );
-}
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-@media (max-width: 480px) {
-  .page {
-    padding-top: 38px;
-  }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 58px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(126, 106, 255, 0.96), rgba(117, 98, 244, 0.94));
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.2;
+      box-shadow:
+        0 8px 18px rgba(76, 55, 180, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transition: transform 0.18s ease, filter 0.18s ease;
+    }
 
-  .username {
-    font-size: 1.8rem;
-  }
-}
-</style>
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      outline: none;
+    }
+
+    .bottom-sparkles {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      letter-spacing: 10px;
+      padding-left: 10px;
+      opacity: 0.78;
+    }
+  </style>
 </head>
 
 <body>
-<div class="city"></div>
+  <div class="nebula" aria-hidden="true"></div>
 
-<main class="page">
-  <div class="profile"></div>
-
-  <div class="username">NekoWave</div>
-
-  <div class="sparkles top-sparkles">✧ ⋆ ˚｡⋆</div>
-
-  <div class="links">
-    <a class="link" href="https://fansly.com/nek0_wave" target="_blank" rel="noopener noreferrer">Fansly</a>
-    <a class="link" href="https://t.me/nek0s_channel" target="_blank" rel="noopener noreferrer">Telegram</a>
-    <a class="link" href="https://www.manyvids.com/Activity/nek0wave/1008511608/club" target="_blank" rel="noopener noreferrer">ManyVids</a>
-    <a class="link" href="https://www.instagram.com/nek0_wave/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a class="link" href="/" >Back to Home</a>
+  <div class="stars" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
   </div>
 
-  <div class="sparkles bottom-sparkles">✧ ⋆ ˚｡⋆</div>
-</main>
+  <div class="city" aria-hidden="true"></div>
+
+  <main class="page">
+    <div
+      class="profile"
+      role="img"
+      aria-label="Sparkly kawaii purple galaxy with a crescent moon"
+    ></div>
+
+    <div class="username">@nek0_wave</div>
+
+    <div class="sparkles" aria-hidden="true">✦ ✧ ✦</div>
+
+    <div class="links">
+      <a class="btn" href="https://fansly.com/nek0_wave" target="_blank" rel="noopener noreferrer">
+        Fansly
+      </a>
+
+      <a class="btn" href="https://t.me/nek0s_channel" target="_blank" rel="noopener noreferrer">
+        Telegram Channel
+      </a>
+
+      <a class="btn" href="https://www.manyvids.com/Activity/nek0wave/1008511608/club" target="_blank" rel="noopener noreferrer">
+        ManyVids
+      </a>
+
+      <a class="btn" href="https://www.instagram.com/nek0_wave/" target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+
+      <a class="btn" href="/">
+        Back to Home
+      </a>
+    </div>
+
+    <div class="bottom-sparkles" aria-hidden="true">✦ ✧ ✦</div>
+  </main>
 </body>
 </html>
