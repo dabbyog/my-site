@@ -1,4 +1,4 @@
-
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,14 +114,34 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .profile {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      margin-bottom: 12px;
+    }
+
+    .username {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
     }
 
     .sparkles {
       margin-bottom: 12px;
       font-size: 1.25rem;
-      letter-spacing: 10px;
+      letter-spacing: 16px;
       text-align: center;
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+      padding-left: 16px;
     }
 
     .links {
@@ -181,6 +201,14 @@
   <div class="city" aria-hidden="true"></div>
 
   <main class="page">
+    <img
+      class="profile"
+      src="https://drive.google.com/uc?export=view&id=1cH62nhoflC4CFHrzjLDy5VdgNaTI8e-V"
+      alt="Neko Wave profile picture"
+    >
+
+    <div class="username">@nek0_wave</div>
+
     <div class="sparkles" aria-hidden="true">
       ✦ ✧ ✦
     </div>
